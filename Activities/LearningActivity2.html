@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adding Program</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0; 
+      color: #333;
+      padding: 2rem;
+      margin: 0 auto; 
+      max-width: 500px; 
+    }
+
+    h2 {
+      font-size: 1.8em;
+      text-align: center; 
+      margin-bottom: 1rem; 
+      color: #2980b9; 
+    }
+
+    p {
+      font-size: 1em; 
+      line-height: 1.5; 
+      margin-bottom: 1rem; 
+    }
+
+    #results {
+      background-color: #fff; 
+      padding: 1rem; 
+      border-radius: 5px; 
+      margin: 1rem auto; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+      border: 1px solid #ddd; 
+    }
+
+    #results p { 
+
+      font-weight: normal; 
+      margin-bottom: 1rem; 
+    }
+
+    #results p:first-child { 
+      margin-bottom: 0.5rem; 
+      font-weight: bold; 
+    }
+  </style>
+</head>
+<body>
+  <h2>JavaScript Arithmetic</h2>
+  <p>A typical arithmetic operation takes two numbers and produces a new number. Enter two numbers below to see their sum:</p><br>
+  <div id="results">
+    <p>Here is the answer:</p>
+    <p id="First"></p>
+    <p id="Second"></p>
+    <p id="answer"></p>
+  </div>
+  <script>
+
+    let a = 0, b = 0, c = 0;
+
+    a = prompt('Please enter the first number', 0);
+
+    b = prompt('Please enter the second number', 0);
+
+    c = parseFloat(a) + parseFloat(b);
+
+    let first = document.getElementById('First');
+    let second = document.getElementById('Second');
+    let answer = document.getElementById('answer');
+
+    first.innerHTML = `First Number is ${a}`;
+
+    second.innerHTML = `Second Number is ${b}`;
+
+    answer.innerHTML =`The sum of the two numbers is : ${c}`;
+
+
+
+</script>
+</body>
+</html>

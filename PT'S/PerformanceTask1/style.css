@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(pxfuel.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  #myImage {
+    width: 300px;
+    height: auto;
+    border: 3px solid lightblue;
+    margin: 0 auto;  }
+  
+  #eyeInfo {
+    display: none;
+    width: 70%;
+    font-size: large;  margin: auto;
+    padding: 15px;
+    border: 3px solid lightblue;
+    background-color: white;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px auto;  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 2em;  }
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @keyframes show {
+      0% {
+transform: translateY(-100%);
+opacity: 0;
+      }
+      100% {
+opacity: 1;
+transform: translateY(0);
+      }
+    }
+    .hide {
+      animation: hide ease-out 0.3s forwards;
+    }

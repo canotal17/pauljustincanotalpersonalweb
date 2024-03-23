@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>A grading program</title>
+<style>
+    /* CSS styling for the page */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+        background-image: url(LTBackground.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #0fbed8;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border: 3px outset black;
+        margin-top: 200px;
+    }
+    h1 {
+        color: #333;
+        text-align: center;
+    }
+    p {
+        color: #666;
+        margin-bottom: 10px;
+    }
+    .grade-details {
+        margin-top: 20px;
+    }
+    .grade-details div {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+<!-- Main container -->
+<div class="container">
+<!-- Title -->
+<h1>A grading program</h1>
+<script type="text/javascript">
+// JavaScript code for the grading program
+// declare the variables
+var a; // variable for first quarter grade
+var b; // variable for second quarter grade
+var c; // variable for third quarter grade
+var d; // variable for fourth quarter grade
+var ave; // variable for average grade
+var g; // variable for letter grade
+var m; // variable for message corresponding to letter grade
+
+// get the values from the user
+a = parseFloat(prompt("Please enter your grade in the first quarter", 0)); // prompt for first quarter grade
+b = parseFloat(prompt("Please enter your grade in the second quarter", 0)); // prompt for second quarter grade
+c = parseFloat(prompt("Please enter your grade in the third quarter", 0)); // prompt for third quarter grade
+d = parseFloat(prompt("Please enter your grade in the fourth quarter", 0)); // prompt for fourth quarter grade
+
+// compute for the average
+ave = (a + b + c + d) / 4;
+
+// determine the letter grade and store it to variable g
+if (ave >= 95) {
+    g = "A";
+} else if (ave >= 90 && ave < 95) {
+    g = "A-";
+} else if (ave >= 85 && ave < 90) {
+    g = "B+";
+} else if (ave >= 80 && ave < 85) {
+    g = "B";
+} else if (ave >= 75 && ave < 80) {
+    g = "B-";
+} else if (ave < 75) {
+g = "F";
+}
+
+
+// determine the corresponding message for the grade
+switch (g) {
+    case "A":
+        m = "OUTSTANDING";
+        break;
+    case "A-":
+        m = "EXCELLENT";
+        break;
+    case "B+":
+        m = "VERY GOOD";
+        break;
+    case "B":
+        m = "GOOD";
+        break;
+    case "B-":
+        m = "SATISFACTORY";
+        break;
+    case "C":
+        m = "PASS";
+        break;
+        case "F":
+            m = "FAIL";
+}
+
+// display the results
+document.write("<h2>" + m + "</h2>");
+document.write("<div class='grade-details'>");
+document.write("<div>Your first quarter grade is: " + a + "</div>");
+document.write("<div>Your second quarter grade is: " + b + "</div>");
+document.write("<div>Your third quarter grade is: " + c + "</div>");
+document.write("<div>Your fourth quarter grade is: " + d + "</div>");
+document.write("<div>Your <b>average</b> is: " + ave + "</div>");
+document.write("<div>Your <b>letter grade</b> is: " + g + "</div>");
+document.write("</div>");
+</script>
+</div>
+</body>
+</html>

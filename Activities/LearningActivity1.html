@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive JavaScript Demo</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      background-color: #1f2022; 
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      color: #38a3a5; 
+      font-size: 2em; 
+      margin-bottom: 1rem; 
+      animation: updown 0.8s infinite alternate;
+    }
+
+    @keyframes updown {
+      from {
+        transform: translateY(-10%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    #demo {
+      text-align: center;
+      color: white;
+      font-size: 1.2em;
+      margin: 1rem auto; 
+    }
+
+    button {
+      background-color: #38a3a5; 
+      color: white;
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer; 
+      transition: background-color 0.2s ease-in-out; 
+    }
+
+    button:hover {
+      background-color: #41b6b9;
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>What Can JavaScript Do?</h2>
+  <p id="demo">JavaScript can change HTML content.</p>
+  <div>
+    <button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!';">Click Me to change the text!</button>
+  </div>
+</body>
+</html>

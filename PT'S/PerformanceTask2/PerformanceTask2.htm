@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odd/Even Analyzer</title>
+  <style>
+    body {
+      font-family: Georgia, serif; /* Elegant serif font for a majestic feel */
+      margin: 2rem;
+      background-image: url(bg.gif);
+background-repeat: no-repeat;
+background-size: cover;
+      color: #333; /* Darker text for readability */
+    }
+
+    .container {
+      max-width: 480px;
+      border-radius: 5px;
+      padding: 20px;
+      margin: auto;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+      padding: 45px;
+      background-color: white;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem; /* Larger title for emphasis */
+      margin-bottom: 1rem;
+    }
+
+    input[type="text"] {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: #fafafa; /* Light input background */
+      width: 400px;
+    }
+
+    button {
+      background-color: #3498db; /* Blue for a majestic feel */
+      color: white;
+      padding: 1rem 2rem; /* Larger padding for a more prominent button */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+    }
+
+    button:hover {
+      background-color: #2980b9; /* Darker blue on hover */
+    }
+
+    #results {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 4px;
+      background-color: #eee; /* Light background for results */
+      width: 400px;
+    }
+
+    #results p {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Enter 10 Integers:</h1>
+    <input type="text" id="numbers" placeholder="Comma-separated integers">
+    <button onclick="analyzeNumbers()">Analyze</button>
+    <div id="results">
+      Answer:<br>
+    </div>
+  </div>
+  <script>
+
+    function analyzeNumbers() {
+
+      const inputString = document.getElementById("numbers").value;
+
+      const numbers = inputString.split(",").map(Number); // Convert string to array of numbers
+
+
+
+      if (numbers.length !== 10) {
+
+        alert("Please enter exactly 10 numbers!");
+
+        return; // Exit the function if not 10 numbers
+
+      }
+
+
+
+      let evenCount = 0;
+
+      let oddCount = 0;
+
+      let sum = 0;
+
+
+
+      for (const num of numbers) {
+
+        if (num % 2 === 0) {
+
+          evenCount++;
+
+        } else {
+
+          oddCount++;
+
+        }
+
+        sum += num;
+
+      }
+
+
+
+      displayResults(evenCount, oddCount, sum);
+
+    }
+
+
+
+    function displayResults(evenCount, oddCount, sum) {
+
+      const resultDiv = document.getElementById("results");
+
+      resultDiv.innerHTML = `
+
+        <h3>Results</h3>
+
+        <p>Even Numbers: ${evenCount}</p>
+
+        <p>Odd Numbers: ${oddCount}</p>
+
+        <p>Total Sum: ${sum}</p>
+
+      `;
+
+    }
+
+  </script>
+</body>
+</html>

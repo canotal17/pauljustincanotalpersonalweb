@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Arranger</title>
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 50px;
+    background-image: url(LTBackground.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding-right: 50px;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2); /* Initial shadow */
+      transition: box-shadow 0.3s ease-in-out; 
+  }
+
+    .container:hover {
+      box-shadow: 5px 5px 5px rgba(255, 0, 0, 0.4), /* Red */
+                   10px 10px 10px rgba(255, 165, 0, 0.4), /* Orange */
+                   15px 15px 15px rgba(255, 255, 0, 0.4), /* Yellow */
+                   20px 20px 20px rgba(0, 255, 128, 0.4), /* Light Green */
+                   25px 25px 25px rgba(0, 128, 255, 0.4), /* Blue */
+                   30px 30px 30px rgba(75, 0, 130, 0.4); /* Indigo */
+    }
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+  }
+
+  .form,
+  .output {
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  button:hover {
+    background-color: #388E3C; /* Change background color on hover */
+  }
+
+  .output p {
+    margin: 0;
+    font-family: monospace;
+  }
+
+  .output p.arranged {
+    color: #333;
+    background-color: #eee;
+    padding: 5px;
+  }
+  .aligner {
+display: flex;
+justify-content: center;
+align-items: center;
+  }
+</style>
+</head>
+<body>
+  <div class="aligner">
+    <div class="container">
+      <h1>Number Arranger</h1>
+      <p>Made by Paul Justin C. Canotal, ICT 11 C, LT#5</p>
+      <div class="form">
+        <label for="number">Enter a Number:</label>
+        <input type="number" id="number" min="1">
+        <button id="arrange-button">Arrange Numbers</button>
+      </div>
+      <div class="output">
+        <p id="output"></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const numberInput = document.getElementById("number");
+    const arrangeButton = document.getElementById("arrange-button");
+    const output = document.getElementById("output");
+
+    arrangeButton.addEventListener("click", () => {
+      const enteredNumber = parseInt(numberInput.value);
+      const arrangedNumbers = [];
+
+      for (let i = 1; i <= enteredNumber; i++) {
+        arrangedNumbers.push(i);
+      }
+
+      output.textContent = arrangedNumbers.join(", ");
+      output.classList.add('arranged'); 
+    });
+  </script>
+</body>
+</html>

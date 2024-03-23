@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odd/Even Analyzer</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-image: url(bg.gif);
+background-repeat: no-repeat;
+background-size: cover;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px; 
+      border-radius: 10px;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+      transition: all 0.3s ease-in-out;
+    }
+
+    .container:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+
+    }
+
+    h2 {
+      margin-bottom: 20px; 
+      font-size: 2.2em; 
+      color: #3498db;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+    }
+
+    #inputArea {
+      margin-bottom: 25px; 
+    }
+
+    p {
+      margin-bottom: 10px; 
+      font-size: 1.1em; 
+      color: #666; 
+    }
+
+    #numbers {
+      padding: 10px;
+      border: 2px solid #3498db; 
+      border-radius: 5px; 
+      width: 80%; 
+      font-size: 1.1em; 
+    }
+
+    button {
+      background-color: #f1c40f; 
+      color: white;
+      padding: 15px 30px; 
+      border: none;
+      border-radius: 8px; 
+      cursor: pointer;
+      margin-top: 10px; 
+      font-size: 1.2em; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #e67e22; 
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4); 
+    }
+
+    #result {
+      margin-top: 20px; 
+    }
+
+    h3 {
+      margin-bottom: 15px;
+      font-size: 1.8em; 
+      color: #9b59b6;
+      text-decoration: underline; 
+    }
+
+    #result p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Odd/Even Analyzer</h2>
+    <div id="inputArea">
+      <p>Enter 25 comma-separated integers:</p>
+      <input type="text" id="numbers">
+      <button onclick="analyzeNumbers()">Analyze</button>
+    </div>
+    <div id="result"></div>
+  </div>
+  <script>
+    function analyzeNumbers() {
+
+const inputString = document.getElementById("numbers").value;
+
+const numbers = inputString.split(",").map(Number); 
+
+
+
+if (numbers.length !== 25) {
+
+    alert("Please enter exactly 25 numbers!");
+
+    return;
+
+}
+
+
+
+let oddCount = 0;
+
+let evenCount = 0;
+
+let sum = 0;
+
+
+
+for (const num of numbers) {
+
+    if (num % 2 === 0) {
+
+        evenCount++;
+
+    } else {
+
+        oddCount++;
+
+    }
+
+    sum += num;
+
+}
+
+
+
+displayResults(oddCount, evenCount, sum); 
+
+}
+
+
+
+function displayResults(oddCount, evenCount, sum) {
+
+const resultDiv = document.getElementById("result");
+
+resultDiv.innerHTML = `
+
+    <h3>Results</h3>
+
+    <p>Odd Numbers: ${oddCount}</p>
+
+    <p>Even Numbers: ${evenCount}</p>
+
+    <p>Total Sum: ${sum}</p>
+
+`;
+
+}
+  </script>
+</body>
+</html>
